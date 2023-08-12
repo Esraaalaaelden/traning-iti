@@ -27,21 +27,16 @@ class _HomeScreenState extends State<HomeScreen> {
         },icon: Icon(Icons.arrow_back_ios),
         ),
       ),
-      body:Column(children: [
-        Container(
-            height: 300,
-            child: page[currentIndex]),
-        Center(
-            child: Text(widget.email,style: TextStyle(
-                fontSize: 30
-            ),)),
-      ],),
+      body:Container(
+        child: page[currentIndex],
+      ),
 
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home),label: 'body1'),
+
           BottomNavigationBarItem(icon: Icon(Icons.security),label: 'body2'),
           BottomNavigationBarItem(icon: Icon(Icons.more),label: 'body3'),
         ],

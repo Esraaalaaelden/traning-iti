@@ -14,6 +14,8 @@ class _Login_ScreenState extends State<Login_Screen> {
   final _forKey =GlobalKey<FormState>();
   TextEditingController emailcontroller = TextEditingController();
 
+  //get prefs => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,8 +74,10 @@ class _Login_ScreenState extends State<Login_Screen> {
                   color: Colors.blue,
                   width: double.infinity,
                   height: 50,
-                  child: MaterialButton(onPressed: (){
+                  child: MaterialButton(onPressed: () async {
                     if(_forKey.currentState!.validate()){
+                      final SharedPreferences pref = await SharedPreferences.getInstance();
+                      await pref.setString('email',emailcontroller.text);
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('success')),
                       );
