@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/views/sing_up.dart';
 import 'home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -119,7 +120,10 @@ class _Login_ScreenState extends State<Login_Screen> {
                   color: Colors.grey,
                   width: double.infinity,
                   height: 50,
-                  child: MaterialButton(onPressed: (){},
+                  child: MaterialButton(onPressed: (){
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) =>SignUp()));
+                  },
                     child:Text('No Account? Sign Up',style: TextStyle(),) ,),
                 ),
               ),
